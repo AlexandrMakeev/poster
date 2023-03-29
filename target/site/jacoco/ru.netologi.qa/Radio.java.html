@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">javaqamvn</a> &gt; <a href="index.source.html" class="el_package">ru.netologi.qa</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netologi.qa;
+
+<span class="fc" id="L3">public class Radio {</span>
+
+    private int currentNumber;
+    private int currentVolume;
+
+    public int getCurrentNumber() {
+<span class="fc" id="L9">        return currentNumber;</span>
+    }
+
+    public int getCurrentVolume() {
+<span class="fc" id="L13">        return currentVolume;</span>
+    }
+
+
+    public int nextNumber() {
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (currentNumber &lt; 9) {</span>
+<span class="fc" id="L19">            currentNumber++;</span>
+        } else {
+<span class="fc" id="L21">            currentNumber = 0;</span>
+        }
+<span class="fc" id="L23">        return currentNumber;</span>
+    }
+
+    public int prevNumber() {
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (currentNumber &gt; 0) {</span>
+<span class="fc" id="L28">            currentNumber--;</span>
+        } else {
+<span class="fc" id="L30">            currentNumber = 9;</span>
+        }
+<span class="fc" id="L32">        return currentNumber;</span>
+
+    }
+
+    public void setCurrentNumber(int newNumber) {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (newNumber &gt; 9) {</span>
+<span class="fc" id="L38">            return;</span>
+        }
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (newNumber &lt; 0) {</span>
+<span class="fc" id="L41">            return;</span>
+        }
+<span class="fc" id="L43">        currentNumber = newNumber;</span>
+
+<span class="fc" id="L45">    }</span>
+
+    public int pluseVolume() {
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (currentVolume &gt; 0) {</span>
+<span class="fc" id="L49">            currentVolume++;</span>
+        } else {
+<span class="fc" id="L51">            currentVolume = 0;</span>
+        }
+<span class="fc" id="L53">        return currentVolume;</span>
+    }
+
+    public void prevVolume() {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (currentVolume &lt; 10) {</span>
+<span class="fc" id="L58">            currentVolume--;</span>
+        } else {
+<span class="fc" id="L60">            currentVolume = 10;</span>
+
+        }
+
+<span class="fc" id="L64">    }</span>
+
+    public int setCurrentVolume(int currentVolume) {
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (currentVolume &lt; 0) {</span>
+<span class="fc" id="L68">            currentVolume = 0;</span>
+        }
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (currentVolume &gt; 10) {</span>
+<span class="fc" id="L71">            currentVolume = 10;</span>
+        }
+<span class="fc" id="L73">        this.currentVolume = currentVolume;</span>
+<span class="fc" id="L74">        return currentVolume;</span>
+    }
+}
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
